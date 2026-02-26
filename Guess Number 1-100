@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+{
+	int numGuess = 0;
+	//generate a new number each time the program runs
+	srand(time(0));
+
+	//generate random number between 1 and 100
+	int randomNum = rand() % 101;
+
+	cout << "Guess the number between 1 and 100!\n";
+
+	do {
+		cin >> numGuess;
+		if (numGuess < randomNum) {
+			cout << "Go Higher\n";
+
+		}
+		if (numGuess > randomNum) {
+			cout << "Go Lower\n";
+		}
+		if (numGuess == randomNum) {
+			cout << "Correct!";
+		}
+	} while (randomNum != numGuess);
+	return 0;
+}
