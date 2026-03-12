@@ -24,11 +24,13 @@ CloudBase(temp,dewpoint,CloudBase_Out);
 
     return 0;
 }
+//calculates wind chill
 void WindChill(double& temp, double& winspd,double& WindChill_Out ){ 
     WindChill_Out = 35.74 + 0.621*temp - pow(35.75*winspd, 0.16) +  pow(0.4275*temp*winspd, 0.16);
 cout << "The Wind Chill is\n"<< WindChill_Out;
 }
 
+//calculates cloud base
 void CloudBase(double& temp, double& dewpoint, double& CloudBase_Out)
 {CloudBase_Out = 1000*temp-dewpoint/4.4;
     cout << "\nThe Cloud Base is\n" << CloudBase_Out;
