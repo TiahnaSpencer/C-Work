@@ -22,4 +22,15 @@ int main() {
     if (answer == 1) {
       MyFile << attendance[i] << " is present.\n\n";
       cout << attendance[i] << " is present.\n\n";
+    } else if (answer == 0) {
+      MyFile << attendance[i] << " is absent.\n\n";
+      cout << attendance[i] << " is absent.\n\n";
+    } else {
+      cout << "Invalid input. Please enter 1 or 0.\n\n";
     }
+  }
+  
+  MyFile.close();
+  return 0;
+}
+  
