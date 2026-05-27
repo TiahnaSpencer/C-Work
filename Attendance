@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+using namespace std;
+
+vector<string>attendance = {"envy ", "ilyas ", "damon ", "hamir " ,"ajay ", "bode ", "george ", "jordan ", "chris ", "caleb ", "seth ", "ryan ", "tiahna ", "bailin ", "elijah ", "connor "};
+
+int main() {
+int answer;
+
+for (int i = 0; i < attendance.size(); i++) {
+  cout <<"Is " << attendance[i] << "here?\n";
+  cin >> answer;
+  
+ for (int i = 1; i < attendance.size(); i++) {
+  cout <<"Is " << attendance[i] << "here?\n";
+  cin >> answer;
+  
+ for (int i = 2; i < attendance.size(); i++) {
+  cout <<"Is " << attendance[i] << "here?\n";
+  cin >> answer;
+}
+return 0;
+}
