@@ -1,0 +1,30 @@
+// this code will run a password creation and validation
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+int password;
+
+    cout << " -------------------------------- " ;
+    cout << " | Password Validation/Creation | " ;
+    cout << " -------------------------------- " ;
+    
+
+cout << "\n \n Please enter a password with at least:\n";
+cout << "\t 8 characters\n";
+cout << "\t One number\n";
+cout << "\t One uppercase letter, and One lowercase letter\n";
+
+//get user input for password 
+cin >> password;
+
+
+//user inputs password again 
+
+return 0;    
+}
+
