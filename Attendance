@@ -17,7 +17,7 @@ int main() {
   string answer;
   string date;
  
-  cout << "Please enter todays date (MM/DD/YY): ";
+  cout << "Please enter todays date (MM-DD-YY): ";
   cin >> date;
 
   ofstream MyFile(date + ".txt");
