@@ -17,12 +17,24 @@ bool isValidInput(string input) {
   return false;
 }
 
+bool isValidDate(string date) {
+  if (date.find('/') != string::npos || date.find('\\') != string::npos) {
+    return false;
+  }
+  return true;
+}
+
 int main() {
   string answer;
   string date;
 
   cout << "Please enter todays date (MM-DD-YY): ";
   cin >> date;
+
+  while (!isValidDate(date)) {
+    cout << "Invalid date. Please enter date without slashes (MM-DD-YY): ";
+    cin >> date;
+  }
 
   ofstream MyFile(date + ".txt");
 
@@ -43,12 +55,8 @@ int main() {
       cout << attendance[i] << " is absent.\n\n";
     }
   }
-  do {
-    cout << "Try Again (no slashes)";
-  } while (date.find('/') != string:: npos);
-    MyFile.close();
+
+  MyFile.close();
 
   return 0;
 }
-
-
