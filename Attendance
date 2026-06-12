@@ -2,9 +2,13 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <cctype>
+#include <cstring>
+#include <algorithm>
 using namespace std;
 
 vector<string>attendance = {"Envy ", "Ilyas ", "Damon ", "Hamir " ,"Ajay ", "Bode ", "George ", "Jordan ", "Chris ", "Caleb ", "Seth ", "Ryan ", "Tiahna ", "Bailin ", "Elijah ", "Connor "};
+
 
 bool isValidInput(string input) {
   if (input == "0" || input == "1") {
@@ -16,7 +20,7 @@ bool isValidInput(string input) {
 int main() {
   string answer;
   string date;
- 
+
   cout << "Please enter todays date (MM-DD-YY): ";
   cin >> date;
 
@@ -25,12 +29,12 @@ int main() {
   for (int i = 0; i < attendance.size(); i++) {
     cout << "Is " << attendance[i] << "here? (1 for yes, 0 for no): ";
     cin >> answer;
-    
+
     while (!isValidInput(answer)) {
       cout << "Invalid input. Please enter 1 or 0: ";
       cin >> answer;
     }
-    
+
     if (answer == "1") {
       MyFile << attendance[i] << " is present.\n\n";
       cout << attendance[i] << " is present.\n\n";
@@ -39,7 +43,12 @@ int main() {
       cout << attendance[i] << " is absent.\n\n";
     }
   }
-  
-  MyFile.close();
+  do {
+    cout << "Try Again (no slashes)";
+  } while (date.find('/') != string:: npos);
+    MyFile.close();
+
   return 0;
 }
+
+
